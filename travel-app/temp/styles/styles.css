@@ -1011,8 +1011,13 @@ a {
 @media (min-width: 800px) {
 
 .site-header {
+        position: fixed;
         background-color: rgba(47,85,114, .3)
 }
+
+        .site-header--dark {
+            background-color: rgba(23, 51, 72, .85);
+        }
     }
 
 @media (min-width: 800px) {
@@ -1030,6 +1035,9 @@ a {
                 transform: translateX(-50%) scale(.8);
         -webkit-transform-origin: 50% 0%;
                 transform-origin: 50% 0%;
+        transition: -webkit-transform .2s ease-out;
+        transition: transform .2s ease-out;
+        transition: transform .2s ease-out, -webkit-transform .2s ease-out;
         background-color: #2f5572;
         padding: 25px 36px;
     }
@@ -1041,6 +1049,11 @@ a {
             -webkit-transform: translateX(0);
                     transform: translateX(0)
     }
+
+            .site-header--dark .site-header__logo {
+                -webkit-transform: scale(.565);
+                        transform: scale(.565);
+            }
     }
 
 .site-header__logo__graphic {
@@ -1223,6 +1236,10 @@ a {
             font-size: 1rem;
             background-color: transparent
     }
+
+            .primary-nav a.is-current-link {
+                color: #fabb69;
+            }
     }
 
 .reveal-item {
