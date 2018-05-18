@@ -21,5 +21,13 @@ gulp.task('watch', function() {
 
   watch('./travel-app/assets/styles/**/*.css', function() {
     gulp.start('cssInject');
-  });	
+  });
+
+  watch('./travel-app/assets/scripts/**/*.js', function() {
+    gulp.start('scriptsRefresh');
+  });
+});
+
+gulp.task('scriptsRefresh', ['scripts'], function() {
+  browserSync.reload();
 });
